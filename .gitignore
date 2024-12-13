@@ -1,0 +1,4 @@
+*.env
+wallpaper.png
+node_modules/
+bun.lockb
