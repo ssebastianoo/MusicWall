@@ -34,7 +34,7 @@ Bun.serve({
     }
 
     const res = await fetch(
-      `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&period=7days&api_key=${Bun.env.API_KEY}&format=json`,
+      `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&period=7day&api_key=${Bun.env.API_KEY}&format=json`,
     );
 
     const json = await res.json();
