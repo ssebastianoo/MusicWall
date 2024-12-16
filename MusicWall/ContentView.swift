@@ -20,11 +20,12 @@ struct ContentView: View {
 
             Button(action: setWallpaper) {
                 Text(isSettingWallpaper ? "Setting..." : "Set Wallpaper")
-                    .frame(minWidth: 120, minHeight: 44)
-                    .background(isSettingWallpaper ? Color.gray : Color.blue)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 12)
                     .foregroundColor(.white)
-                    .cornerRadius(8)
             }
+            .background(Color.accentColor)
+            .cornerRadius(8)
             .disabled(isSettingWallpaper)
         }
         .padding()
@@ -56,7 +57,7 @@ struct ContentView: View {
                     return
                 }
 
-                guard let data = data, let image = NSImage(data: data) else {
+                guard let data = data, let _ = NSImage(data: data) else {
                     self.errorMessage = "Failed to load image"
                     self.isSettingWallpaper = false
                     return
